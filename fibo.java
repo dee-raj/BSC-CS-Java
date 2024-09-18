@@ -1,18 +1,18 @@
 import java.io.*;
 import java.util.Scanner;
-class fact
+class fibo
 {
 public static void main (String args[])
 {
-int n, f=1,a=0;
+int n, a=0,b=1,c=0;
 System.out.println("Enter a number");
 Scanner z=new Scanner(System.in);
 n=z.nextInt();
-for(int i=1; i<n; i++)
-{
-f=f*i;
-a=f*n;
+for(int i=0; i<n; i++)
+{ c=a+b;
+b=a;
+a=c;
+System.out.println("Series is "+c);
 }
-System.out.println("Factorial is= "+a);
 }
 }
