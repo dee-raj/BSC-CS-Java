@@ -1,0 +1,29 @@
+COMPONENTS
+1> Light-weight component
+    => that can be added to some other components
+    => eg:- JButton, JLabel,JTextArea etc
+    => JButton -> JFrame
+
+2> Heavy-weight component
+    => that can not be added to some other components
+    => eg:- JFrame, JDiablog etc
+    => JFrame -> X
+
+CONTAINER 
+=> A container is a component, witch may contain some other 
+    Light-weight component. eg:- JFrame
+    meaning; JFrame can contain JLabel,JButton etc
+
+    but; JLabel,JButton etc can not contain anything 
+    they just have text defining them with own properties.
+
+JPanel
++> JPanel is a Light-weight component.
+    >JPanel -> JFrame (JPanel can be added to JFrame)
+
++> JPanel is a container also; that means it can add other light weight component
+    > JLabel  -> JPanel
+    > JButton -> JPanel
+    > JPanel  -> JPanel
+
+    it can be used for layout duping/ creating sections in a frame at some position

@@ -1,0 +1,52 @@
+<html dir="rtl">
+<head>
+    <title>JSON with JavaScript</title> 
+</head>
+<body>
+        <p>Access a javascript object</p>
+        <p id="demo" style="background-color:aliceblue;"></P>
+        <span id="sp" style="background-color:beige;"></span>
+        <!-- <hr size="5" color="violet"> -->
+        <h2>Create objects fron JSON string</h2>
+        <span id="jobj" style="background-color:blanchedalmond;"></span>
+        <h3>JSON stringify() method</h3>
+        <span id="job" style="background-color:blanchedalmond;"></span>
+        <script>
+    
+
+            //json object
+        var myObj,x,y,z,a,s;
+        myObj={name:"Draj ",age:21,city:" vasai ",study:"mount carmel",sub:" comp"};
+        x=myObj.name; // accessing javascript object
+        y=myObj["age"]; // accessing javascript object using bracket notation
+
+        z=myObj.city; //accessed 
+        z=myObj.city=" mumbai ";//modify
+
+        a=myObj["study"]="vartak clz "; // access and modify at single line
+
+        s=myObj.sub;//access
+        s=" computer";//modify
+        document.getElementById("demo").innerHTML=x+y+z+a+s;
+
+
+
+        //access for-in loop
+        var jsonObj,j1; //json objects
+        jsonObj={"name":"John ","age ":"30 ","car":null};//json
+        for (j1 in jsonObj){
+            document.getElementById("sp").innerHTML+=j1+" "+jsonObj[j1]+"<br>";
+        }
+        
+        // obj creating from json string
+        var txt='{"name":"Joe ","age ":22,"city":"new york"}';
+        var obj=JSON.parse(txt);
+        document.getElementById("jobj").innerHTML=obj.name;
+
+
+        // converting other type to string with json
+        var myJSON = JSON.stringify(myObj);
+        document.getElementById("job").innerHTML=myJSON;
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+LAYOUT MANAGERS
+-> The arrangement of the components inside a container is called Layout.
+
+1. NullLayout
+    ->Not using any specific layout so, we have to decide by ourself 
+    ->The position of each components in the frame/container.
+    ->The position/size is fixed to top-left corneer.
+    ->Even if we resize the window the position & size of chaild components are uneffect/unchanged.
+    
+    ->containerOBJ.setLayout(null);
+    ->btn.setBounds(20,10,50,50);
+    ->containerOBJ.add(btn);
+
+
+2. BorderLayout
+    ->there are main five area of BorderLayout
+        a. PAGE_START, NORTH
+        b. LINE_START, WEST
+        c. CENTER 
+        d. LINE_END, EAST
+        e. PAGE_END, SOUTH
+    -> If we resize the window/frame the size of child component is increase or decrease in a ratio but the position remain the same.
+    ->but the height of PAGE_START & PAGE_END will be same.
+    ->and CENTER will take the position of others if they are absent or if in 'add()' method int value is not given.
+    ->By default the layout of frame is BorderLayout.
+
+    ->BorderLayout borderobj=new BorderLayout();
+    ->containerOBJ.setLayout(borderobj);
+    ->containerOBJ.add(btn, BorderLayout.SOUTH);
+    
+3. FlowLayout
+    -> Flow Layout is the default layout of JPanel.
+    -> It sets the component as its preferred size in java.
+    -> It also sets the width of the component according to its content.
+    -> If width of JFrame is less then it shift the extra components to the next row.
+    -> If width of JFrame is more then it aligns the components to the CENTER
+
+    <>How to use Flow Layout
+    >set Alignment in Flow Layout
+    >setVgap() & setHgap()
+    >indexing in Flow Layout
+    ->insert to the given index if any other component is present the shifts it
+    ->con.add(b5,1);
+
+    ->con.setLayout(new FlowLayout(FlowLayout.RIGHT,10,10));
+
+
+4. GridLayout
+    -> grid is the combination of rows and columns called cells.
+    -> Just like FlowLayout, Grid layout also sets the components left-to-right in a Flow
+    -> In Grid layout all the available space is consumed by the components.
+    -> grid layout can be divided into the form of rows and columns.
+    -> In Grid Layout all the components have the same size.
+
+    ->con.setLayout(new GridLayout(rows,columns));
+    ->con.setLayout(new GridLayout(rows,columns,setHgap,setVgap));
+        ->GridLayout g=new GridLayout(2,3);
+        ->g.setHgap(20);
+        ->g.setVgap(30);
+        ->con.setLayout(g);
+            gap values are changes in ratio when frame resizing.
+        
+        ->con.add(b5,3);
+            indexing is only possible in left-to-right direction
+
+
+5. GridBagLayout
+    con.setLayout(new GridBagLayout());
+        GridBagConstraints gbc=new GridBagConstraints();
+        gbc.fill=gbc.HORIZONTAL;
+        // gbc.fill=gbc.BOTH;//fill extra space horizontal & vertical
+        // gbc.weighty=0.4;//requests for extra available space vertically
+        gbc.weightx=0.6;//requests for extra available space horizontally
+    
+    gbc.gridwidth=2;
+        gbc.gridx=1;
+        gbc.gridy=3;
+        gbc.ipady=0;
+        gbc.anchor=gbc.PAGE_END;
+        gbc.weighty=1;
+        con.add(b5,gbc);
+
+        pack();
+
+
+6. CardLayout
+    -> A CardLayout object is a layout manager for a container.
+    -> it treats each component in the container as a card.
+    -> Only one card is visible at a time, and the container acts as a stack of cards.
+    -> The first component added to a CardLayout object is the visible component when the container is first displaed.
+    -> Card layout has some useful methods to flip the caeds.
+        Importat methods:
+        >first()     +> to display first card
+        >last()      +> to display last card
+        >next()      +> to display next card
+        >previous()  +> to display previous card
+        >show()      +> to display any card by its id
+
+
+7. GroupLayout
+8. BoxLayout
+    -> A BoxLayout arranges the components in a single row or a column.
+    -> Only one constructor is used by BoxLayout:
+        BoxLayout(Container target, int axis)
+    -> Four differnt axes could be chosen:
+        ~> X_AXIS 
+        ~> Y_AXIS 
+        ~> LINE_AXIS 
+        ~> PAGE_AXIS 
+
+    -> BoxLayout is same as FlowLayout but with more features.

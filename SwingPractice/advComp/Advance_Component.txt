@@ -1,0 +1,306 @@
+Advancd Components
+1> JProgressBar
+    -> JProgressBar is used to display the progress of some specified task.
+    -> JProgressBar is a part of java swing package.
+    -> JProgressBar shows the percentage of completion of specified task.
+    -> The progressbar fills up as the task reaches its completion.
+    -> in addition to show the percentage of component of task, it can also display some text.
+
+    types:
+        -> horizontal progressbar
+        -> vertical progressbar
+        -> progressbar with some text
+
+    Constructors:
+        1> JProgressBar()
+            -> creates an progressbar with no text on it
+        
+        2> JProgressBar(int orientation)
+            -> creates an progressbar with a specified orientation.
+            -> if swingContants.VERTICAL is passed as a argument a vertical progressbar is created, if
+            -> swingContants.HORIZONTAL is passed as a argument a horizontal progressbar is created
+
+        3> JProgressBar(int min, int max)
+            -> creates an progressbar with a specified minimum & maximum.
+
+        4> JProgressBar(int orientation, int min, int max)
+
+    methods:
+        -> setMaximum(int n)
+        -> setMinimum(int n)
+        -> setValue(int n)
+        -> setString(Sreing s)
+        -> setStringPaintes(boolean n): decides wether string should be displayed or nor 
+        
+    When to use:
+        -> downloading a file from imternet
+        -> oading the database
+        -> initailizing the app
+        -> saving the file
+        -> Opening the file 
+        -> closing the windows etc... 
+        
+2> JSpinner 
+    -> JSpinner is a part of javax.swing package.
+    -> JSpinner is a single line input field that allows the user to select a number or an object value from an ordered sequence.
+    -> The user can manually type in a legal data into the text field of the spinner.
+    -> The spinner is sometimes prefered because they do not need a drop down list.
+    -> Spinner contains a upward and downward arrow to show the previous and the next element when it is pressed.
+
+    Constructor of JSpinner are:
+        -> JSpinner() : creates an empty spinner with initial value set to zero and no constraints.
+        -> JSpinner(SpinnerModel model) : creates a spinner with a specified spinner model passed as argument.
+
+    Commonly used methods are:
+        -> SpinnerListModel(list1)
+        -> SpinnerNumberModel(int value, int max, int min, int step)
+        -> setValue(Object v)
+        -> getValue()
+        -> getPreviousValue()
+        -> getNextValue()
+
+    use ChangeListener interface to feel the changes in spinners values
+    public void stateChanged(ChangeEvent ce){
+        
+    }
+
+
+3> JCheckBoxMenuItem 
+4> JOptionPane 
+5> JScrollPane 
+6> JTabbedPane 
+7> JTable 
+
+
+8> JFileChooser 
+    JFileChooser is a very useful component that is used to show 
+    a system dislog to the user so that user can choose a file or a directory.
+
+
+9> JColorChooser
+
+...many more below
+
+
+
+
+
+
+
+
+
+
+
+
+
+JSplitPane
+    -> JSplitPane is a Component that is used to devide a container into two parts.
+    -> There is a divider line b/w both the parts that can be moved to resize the parts.
+    -> both the parts now works as a seperate as a container.
+    -> JSplitPane can be of two types, vertical and horizontal.
+
+JToolTip
+    -> A ToolTip is a message that appears when a cursor is positioned over an icon, image, hyperLink 
+        or other element in a GUI.
+    -> We can add tooltip text to almost all the components of java swing by using the following method
+        setToolTip(String s). 
+
+    -> This method sets the tooltip of the component to the specified String s.
+    -> When the cursor enters the boundary of that component a popup appears and text is displayed.
+
+    How to Create a:
+        >Single line ToolTip
+        >Multi Line ToolTip
+        >Formatted text ToolTip(Customized ToolTip)
+
+
+JSlider 
+    -> A JSlider is an implemetation of slider that allows the user to select a value by sliding the knob within bounded value
+
+    Parts of a JSlider:
+        > Track
+        > knob 
+        > Major Ticks
+        > Minor Ticks
+        > Labels 
+
+    importent methods are:
+        -> setMaximum(int n)
+        -> setMinimum(int n)
+        -> setValue(int n)
+        -> setOrientation(o)
+
+        -> setPaintTicks(boolean b)
+        -> setPaintTrack(boolean b)
+        -> setPaintLabels(boolean b)
+
+        -> setMajorTickSpacing(int n)
+        -> setMinorTickSpacing(int n)
+
+        addChangeListener(ChangeListener I)
+
+
+
+JDialog
+    -> JDialog is a part of java swing package and is used to create dialog boxes in java.
+    -> JDialog is a heavy weight component like JFrame so it can not be added to any container.
+    -> like JFrame, JDialog also contains the border layout as the default layout manager.
+    -> it is like JFrame but the diff is that it is always used as a child window.
+    -> JDialog does not contain maximize and minimize buttons like JFrame.
+    -> JDialog usually are created with JOptionPane static methods.
+
+
+JWindow
+    ->JWindow is also a top level container like JFrame but the major difference is that JWindow does not have 
+        the titlebar and window management buttons like maximize, minimize and close button.
+    ->it can be displayed anywhere on user's desktop.
+
+
+JToolBar 
+    -> A JToolBar is a group of Commonly used components such as buttons with icons or dropdwon menus.
+
+JList
+    -> it is a component that displays a set of Object and allows the user to selet one or more items.
+    -> JList is an easy way to display an array of vectors.
+
+    Constructors for JList are:
+    1> JList()
+        creates an empty blank list
+
+    2> JList(Object[] items)
+        creates a new list with the elements of array
+
+    3> JList(Vector v)
+        creates a new list with the elements of vector
+
+    4> JList(ListModel m)
+        creates a new list with the specified list model
+        
+
+JRootPane
+    ->A JRootPane is a light-weight container used behind the scenes by Jframe, JDialog, JWindow, JApplet 
+        and JInternalFrame.
+    ->Parts of a RootPage
+        > ContentPane
+        > Optional menubar
+        > LayeredPane
+        > GlassPane
+
+JLayeredPane 
+    -> JLayeredPane class is used to add depth to swing container.
+    -> It is used to provide a third dimension for positioning the component.
+    -> it allows components to overlap each other when needed.
+    -> An integer object specify each component's depth in the container.
+    -> The higher numbered component displays 'on top' of other components.
+
+    JLayeredPane divides the depth-range into several different layers.
+        1. FRAME_CONTENT_lAYER(-30000)
+        2. DEFAULT_LAYER(0)
+            the standard layer, where most components go, this the buttommost layer
+
+        3. PALETTE_LAYER(100)
+            the palette layer sits over the default layer. Useful for floating toolbars and palettes,
+            so they can be positioned above other components.
+
+        4. MODAL_LAYER(200)
+            The layer used for modal dialogs. they will appear on top of any toolbars, palettes, or 
+            standard components in the container.
+
+        5. POPUP_LAYER(300)
+            The popup layer displays above dialogs. That way, the popup windows associated with comboBoxes, 
+            tooltips and other help text will appear above the component, palette, or dialog that
+            generated them.
+
+        6. DRAG_LAYER(400)
+            when dragging a component, reassigning it to the drag layer ensures that it is positioned
+            over every other component in the container. When finished dragging, it can be reassigned to its
+            normal layer. 
+
+        HOW-TO-ADD-COMPONENTS 
+        -> layeredPane.add(component, LayeredPane.DEFAULT_LAYER);
+        or 
+        -> layeredPane.add(component, new Integer(10s));
+
+GlassPane
+    -> A GlassPane is a container that seems like a glass showing at the top of content pane.
+    -> it is transparent and hidden by default.
+    -> The glass pane is useful when you want to be able to catch events or paint over an area that already 
+        contains one or more components.
+    -> for example, you can deactivates mouse events for a multi-component region by having the glass pane 
+        intercept the events. Or you can display an image over multiple components using the glass pane.
+
+
+JTree
+    -> A JTree is a swing component that is used to display a hierarchical data into a tree form.
+    -> A tree is made of nodes.
+    -> The node from which tree starts is called root node.
+    -> The node having sub-nodes is called parent node.
+    -> The node having its parent is called child node.
+    -> The node having mo child is called leaf-node.
+    -> The nodes at the same hierarchical level and having same parent is called siblings.
+
+What is LookAndFeel ?
+    "look" refers to the appearance of GUI widgets and "feel" refers to the why the widgrts behave
+    How to set LookAndFeel:
+        try{
+            UIManager.setLookAndFeel(String lookAndFeelClassName);
+        }catch(Exception e){
+            //handle the exception here
+        }
+
+    Different types of Themes of Java 
+        1.MetalLookAndFeel
+            javax.swing.plaf.metal.MetalLookAndFeel
+
+        2.NimbusLookAndFeel
+            javax.swing.plaf.nimbus.NimbusLookAndFeel
+
+        3.MotifLookAndFeel
+            com.sun.java.swing.plaf.motif.MetalLookAndFeel
+
+        4.WindowsLookAndFeel
+            com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+
+        5.WindowsClassicLookAndFeel
+            com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel
+    
+    Jtatto Library
+        Jtatto is an external library that is used to change the look and feel of java swing Components.
+        Download link: http://www.jtatto.net/Download.html
+
+        Download from maven
+            step 1: Go to Google and search "maven repository"
+            step 2: Click the first result "maven site"
+            step 3: search "JTatto" in maven search box 
+            step 4: Download the jar file from here 
+            step 5: add this into your project 
+            step 6: write the below code into the main method.
+
+        Different types of Thems of Jtatto
+            1. TextureLookAndFeel
+                com.jtatto.plaf.texture.TextureLookAndFeel
+            2. SmartLookAndFeel
+                com.jtatto.plaf.smart.SmartLookAndFeel
+            3. NoireLookAndFeel
+                com.jtatto.plaf.noire.NoireLookAndFeel
+            4. AcryLookAndFeel
+                com.jtatto.plaf.acry.AcryLookAndFeel
+            5. AeroLookAndFeel
+                com.jtatto.plaf.aero.AeroLookAndFeel
+            6. AluminiumLookAndFeel
+                com.jtatto.plaf.aluminuim.AluminiumLookAndFeel
+            7. BernsteinLookAndFeel
+                com.jtatto.plaf.bernstein.BernsteinLookAndFeel
+            8. FastLookAndFeel
+                com.jtatto.plaf.fast.FastLookAndFeel
+            9. GraphiteLookAndFeel
+                com.jtatto.plaf.graphite.GraphiteLookAndFeel
+            10. HiFiLookAndFeel
+                com.jtatto.plaf.hifi.HifiLookAndFeel
+            11. LunaLookAndFeel
+                com.jtatto.plaf.luna.LunaLookAndFeel
+            12. McWinLookAndFeel
+                com.jtatto.plaf.mcwin.McWinLookAndFeel
+            13. MintLookAndFeel
+                com.jtatto.plaf.mint.MintLookAndFeel
+            
